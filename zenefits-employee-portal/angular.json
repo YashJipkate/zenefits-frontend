@@ -30,7 +30,8 @@
             ],
             "scripts": [
               "src/assets/js/jquery-3.4.1.min.js",
-              "src/assets/js/bootstrap.js"
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/loader.js"
             ],
             "es5BrowserSupport": true
           },
