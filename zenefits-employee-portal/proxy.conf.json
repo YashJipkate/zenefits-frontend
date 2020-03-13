@@ -1,0 +1,8 @@
+{
+  "/core/*": {
+    "target": "https://api.zenefits.com/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+    }
+}
