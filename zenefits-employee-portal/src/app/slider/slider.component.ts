@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DepartmentsService } from '../services/departments.service';
-import { CompaniesService } from '../services/companies.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-slider',
@@ -17,7 +16,7 @@ export class SliderComponent implements OnInit {
   companiesData: any[] = [];
   campaniesQueryUrl: string;
   constructor(
-    private departmentService: DepartmentsService, private companiesService: CompaniesService) {
+      private dataService: DataService) {
     this.departmentQueryUrl = '/core/departments';
     this.campaniesQueryUrl = '/core/companies';
   }
@@ -28,7 +27,7 @@ export class SliderComponent implements OnInit {
   }
 
   getCompleteListOfDepartments(url: string) {
-    this.departmentService.getAllDepartments(url).subscribe((data: any) => {
+    this.dataService.getData(url).subscribe((data: any) => {
       this.departmentsData.push(data.data.data);
       if (data.data.next_url) {
         this.getCompleteListOfDepartments(data.data.next_url);
@@ -44,7 +43,7 @@ export class SliderComponent implements OnInit {
   }
 
   getCompleteListofCompanies(url: string) {
-    this.companiesService.getAllCompanies(url).subscribe((data: any) => {
+    this.dataService.getData(url).subscribe((data: any) => {
       this.companiesData.push(data.data.data);
       if (data.data.next_url) {
         this.getCompleteListofCompanies(data.data.next_url);

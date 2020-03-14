@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../services/employee.service';
 import { GoogleInstanceService } from '../services/google-instance.service';
+import { DataService } from '../services/data.service';
 
 let that: any;
 
@@ -18,7 +18,8 @@ export class OrgChartComponent implements OnInit {
   chartData = [];
   gLib: any;
   chartConfig: any;
-  constructor(private employeeService: EmployeeService, private gInstanceService: GoogleInstanceService) {
+  constructor(
+    private dataService: DataService, private gInstanceService: GoogleInstanceService) {
     this.employeeQueryUrl = '/core/people';
   }
 
@@ -29,10 +30,10 @@ export class OrgChartComponent implements OnInit {
   }
 
   getCompleteListOfEmployees(url: string) {
-    this.employeeService.getAllEmployees(url).subscribe((data: any) => {
+    this.dataService.getData(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
       if (data.data.next_url) {
-        this.getCompleteListOfEmployees(data.data.next_url);
+        this.getCompleteListOfEmployees(data.data.next_url.replace('https://api.zenefits.com', ''));
       } else { this.buildDataForChart(this.employeesData.flat()); }
     }, (error) => { console.log(error); });
   }
