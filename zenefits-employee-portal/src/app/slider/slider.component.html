@@ -6,56 +6,19 @@
       data-ride="carousel"
     >
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div *ngFor="let data of sliderData; let i = index" [ngClass]="(i==0) ? 'carousel-item active' : 'carousel-item'">
           <div class="slider_item-box">
             <div class="slider_item-container">
               <div class="slider_item-detail">
                 <h1>
-                  PROVIDES TO MAKE BETTER SOFTWARE
+                  {{ data.heading }}
                 </h1>
                 <p>
-                  Marketers/advertisers usually focus their efforts on the
-                  people responsible for making the purchase.
+                  {{ data.name }}
                 </p>
               </div>
               <div class="slider_item-imgbox">
-                <img src="images/pc-banner.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slider_item-box">
-            <div class="slider_item-container">
-              <div class="slider_item-detail">
-                <h1>
-                  PROVIDES TO MAKE BETTER SOFTWARE
-                </h1>
-                <p>
-                  Marketers/advertisers usually focus their efforts on the
-                  people responsible for making the purchase.
-                </p>
-              </div>
-              <div class="slider_item-imgbox">
-                <img src="images/pc-banner.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slider_item-box">
-            <div class="slider_item-container">
-              <div class="slider_item-detail">
-                <h1>
-                  PROVIDES TO MAKE BETTER SOFTWARE
-                </h1>
-                <p>
-                  Marketers/advertisers usually focus their efforts on the
-                  people responsible for making the purchase.
-                </p>
-              </div>
-              <div class="slider_item-imgbox">
-                <img src="images/pc-banner.png" alt="" />
+                <img src="../../assets/images/pc-banner.png" alt="" />
               </div>
             </div>
           </div>
