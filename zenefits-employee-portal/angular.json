@@ -71,7 +71,6 @@
           "configurations": {
             "production": {
               "browserTarget": "zenefits-employee-portal:build:production",
-              "proxyConfig": "proxy-prod.conf.json"
             }
           }
         },
