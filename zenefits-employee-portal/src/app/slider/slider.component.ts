@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentsService } from '../services/departments.service';
+import { CompaniesService } from '../services/companies.service';
 
 @Component({
   selector: 'app-slider',
@@ -13,12 +14,17 @@ export class SliderComponent implements OnInit {
   ];
   departmentsData: any[] = [];
   departmentQueryUrl: string;
-  constructor(private departmentService: DepartmentsService) {
+  companiesData: any[] = [];
+  campaniesQueryUrl: string;
+  constructor(
+    private departmentService: DepartmentsService, private companiesService: CompaniesService) {
     this.departmentQueryUrl = '/core/departments';
+    this.campaniesQueryUrl = '/core/companies';
   }
 
   ngOnInit() {
     this.getCompleteListOfDepartments(this.departmentQueryUrl);
+    this.getCompleteListofCompanies(this.campaniesQueryUrl);
   }
 
   getCompleteListOfDepartments(url: string) {
@@ -33,7 +39,22 @@ export class SliderComponent implements OnInit {
             name: department.name
           });
         });
-        console.log(this.departmentsData);
+      }
+    });
+  }
+
+  getCompleteListofCompanies(url: string) {
+    this.companiesService.getAllCompanies(url).subscribe((data: any) => {
+      this.companiesData.push(data.data.data);
+      if (data.data.next_url) {
+        this.getCompleteListofCompanies(data.data.next_url);
+      } else {
+        this.companiesData.flat().forEach((company) => {
+          this.sliderData.push({
+            heading: 'Explore your companies',
+            name: company.legal_name + ' (' + company.legal_city + ', ' + company.legal_state + ')'
+          });
+        });
       }
     });
   }
