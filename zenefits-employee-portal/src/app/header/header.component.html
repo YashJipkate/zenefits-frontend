@@ -12,14 +12,14 @@
           class="d-none d-lg-flex ml-auto flex-column flex-lg-row align-items-center mt-3"
         >
           <ul class="navbar-nav  mr-5">
-            <li *ngIf="auth.loggedIn">
+            <li *ngIf="auth.loggedIn" class="greeting">
               <span *ngIf="auth.userProfile$ | async as profile">Hello, {{ profile.given_name }}!</span>
             </li>
             <li class="nav-item mr-5">
               <p class="nav-link" (click)="auth.login()" *ngIf="!auth.loggedIn">
                 <span>Login</span>
               </p>
-              <p class="nav-link" (click)="auth.logout()" *ngIf="auth.loggedIn">
+              <p class="nav-link logout-text" (click)="auth.logout()" *ngIf="auth.loggedIn">
                 <span>Logout</span>
               </p>  
             </li>

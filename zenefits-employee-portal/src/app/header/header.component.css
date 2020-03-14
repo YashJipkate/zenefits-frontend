@@ -1,3 +1,11 @@
+.greeting {
+    color: white;
+}
+
+.logout-text {
+    color: rgb(119, 240, 230)
+}
+
 .nav-link:hover {
     cursor: pointer;
 }
