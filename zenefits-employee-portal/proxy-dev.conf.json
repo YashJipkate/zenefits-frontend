@@ -1,8 +1,11 @@
 {
   "/core/*": {
-    "target": "https://api.zenefits.com/",
+    "target": "http://localhost:3000/",
     "secure": false,
     "changeOrigin": true,
+    "pathRewrite": {
+      "^/core" : ""
+    },
     "logLevel": "debug"
     }
 }
