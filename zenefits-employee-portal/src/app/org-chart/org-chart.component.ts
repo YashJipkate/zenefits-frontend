@@ -33,7 +33,8 @@ export class OrgChartComponent implements OnInit {
     this.dataService.getData(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
       if (data.data.next_url) {
-        this.getCompleteListOfEmployees(data.data.next_url.replace('https://api.zenefits.com/core', ''));
+        this.getCompleteListOfEmployees(
+          data.data.next_url.replace('https://api.zenefits.com/core', 'https://zenefits-backend.herokuapp.com'));
       } else { this.buildDataForChart(this.employeesData.flat()); }
     }, (error) => { console.log(error); });
   }
