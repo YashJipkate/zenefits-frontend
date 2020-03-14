@@ -25,10 +25,10 @@ export class OrgChartComponent implements OnInit {
   ngOnInit() {
     that = this;
     this.gLib = this.gInstanceService.getGoogle();
-    this.getCompleteListOfEmployees();
+    this.getCompleteListOfEmployees(this.employeeQueryUrl);
   }
 
-  getCompleteListOfEmployees(url = this.employeeQueryUrl) {
+  getCompleteListOfEmployees(url: string) {
     this.employeeService.getAllEmployees(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
       if (data.data.next_url) {
@@ -37,7 +37,7 @@ export class OrgChartComponent implements OnInit {
     }, (error) => { console.log(error); });
   }
 
-  buildDataForChart = (employeesData) => {
+  buildDataForChart = (employeesData: any[]) => {
     employeesData.filter(element => element.status === 'active').forEach(element => {
       this.chartData.push([{
         v: element.id,
