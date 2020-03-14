@@ -1,0 +1,16 @@
+.mainContainer {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#chart_div {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-width: 100vw;
+    overflow-x: scroll;
+}
+
+.nodeStyle {
+    background-color: blanchedalmond;
+    border-color: red;
+}

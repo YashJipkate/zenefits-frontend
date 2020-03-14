@@ -38,28 +38,24 @@ export class OrgChartComponent implements OnInit {
   }
 
   buildDataForChart = (employeesData) => {
-    employeesData.forEach(element => {
+    employeesData.filter(element => element.status === 'active').forEach(element => {
       this.chartData.push([{
         v: element.id,
         f: element.preferred_name +
-           '<div style="color: #888">' + (element.first_name ? element.first_name + ' ' : '') +
-           (element.middle_name ? element.middle_name + ' ' : '') +
-           (element.last_name ? element.last_name + ' ' : '') + '</div>'},
+           '<div style="color: #888">' + (element.work_email ? element.work_email + ' ' : '') + '</div>'},
         (element.manager.url ? element.manager.url.split('/').pop() : ''), '']);
     });
-    console.log(employeesData);
     this.gLib.charts.load('current', {packages: ['orgchart']});
     this.gLib.charts.setOnLoadCallback(this.drawChart);
   }
 
   drawChart = () => {
-    console.log(that);
     that.chartConfig = new that.gLib.visualization.DataTable();
     that.chartConfig.addColumn('string', 'Name');
     that.chartConfig.addColumn('string', 'Manager');
     that.chartConfig.addColumn('string', 'ToolTip');
     that.chartConfig.addRows(that.chartData);
     const chart = new that.gLib.visualization.OrgChart(document.getElementById('chart_div'));
-    chart.draw(that.chartConfig, {allowHtml: true, title: 'Organization Chart'});
+    chart.draw(that.chartConfig, {allowHtml: true, size: 'large', allowCollapse: true, nodeClass: 'nodeStyle'});
   }
 }
