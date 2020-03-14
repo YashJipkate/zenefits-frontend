@@ -1,5 +1,8 @@
 # Zenefits Backend
-The backend for the Zenefits portal built in Express.js.
+The backend for the Zenefits portal built in Express.js. The salient features of this app are:
+
+ - CORS enabled
+ - Usage of dotenv to manage server secrets.
 
 ## Development server
 
