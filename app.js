@@ -1,13 +1,14 @@
 const express = require('express')
 var cors = require('cors')
 const app = express()
-const port = 3000
 
 app.use(cors())
 
 const apiHelper = require('./api-helper')
 
 require('dotenv').config();
+
+const port = process.env.PORT
 
 app.get('/', (req, res) => res.send('Home page!'))
 
