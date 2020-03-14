@@ -20,7 +20,7 @@ export class OrgChartComponent implements OnInit {
   chartConfig: any;
   constructor(
     private dataService: DataService, private gInstanceService: GoogleInstanceService) {
-    this.employeeQueryUrl = '/core/people';
+    this.employeeQueryUrl = 'https://zenefits-backend.herokuapp.com/people';
   }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class OrgChartComponent implements OnInit {
     this.dataService.getData(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
       if (data.data.next_url) {
-        this.getCompleteListOfEmployees(data.data.next_url.replace('https://api.zenefits.com', ''));
+        this.getCompleteListOfEmployees(data.data.next_url.replace('https://api.zenefits.com/core', ''));
       } else { this.buildDataForChart(this.employeesData.flat()); }
     }, (error) => { console.log(error); });
   }

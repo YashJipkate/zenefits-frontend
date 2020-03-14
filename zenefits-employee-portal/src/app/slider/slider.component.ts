@@ -17,8 +17,8 @@ export class SliderComponent implements OnInit {
   campaniesQueryUrl: string;
   constructor(
       private dataService: DataService) {
-    this.departmentQueryUrl = '/core/departments';
-    this.campaniesQueryUrl = '/core/companies';
+    this.departmentQueryUrl = 'https://zenefits-backend.herokuapp.com/departments';
+    this.campaniesQueryUrl = 'https://zenefits-backend.herokuapp.com/companies';
   }
 
   ngOnInit() {
