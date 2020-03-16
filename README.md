@@ -4,14 +4,14 @@
 
 Submission for the Zenefits internship assignment. Zenefits online portal is an Angular web app with backend in Express.js ([Github repo](https://github.com/YashJipkate/zenefits-backend)). Some salient features of this app are:
 
--  Uses customized [Google Charts API](https://developers.google.com/chart/interactive/docs/gallery/orgchart)'s Oranization chart to build the org chart.
--  Shows all the companies associated with the Auth token in an attractive carousel.
--  Shows all the departments associated with the Auth token in the carousel.
--  Social (Google and Email) authentication using Auth0 integration.
--  CircleCI integration for testing and Continous Integration.
--  Deployed on Netlify.
--  'A' quality code certified by Codacy.
--  Code base follows best practices.
+- Uses customized [Google Charts API](https://developers.google.com/chart/interactive/docs/gallery/orgchart)'s    Oranization chart to build the org chart.
+- Shows all the companies associated with the Auth token in an attractive carousel.
+- Shows all the departments associated with the Auth token in the carousel.
+- Social (Google and Email) authentication using Auth0 integration.
+- CircleCI integration for testing and Continous Integration.
+- Deployed on Netlify.
+- 'A' quality code certified by Codacy.
+- Code base follows best practices.
 
 ## Development server
 
