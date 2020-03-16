@@ -15,9 +15,11 @@ Submission for the Zenefits internship assignment. Zenefits online portal is an 
 
 ## Development server
 
-Run the backend server. Instructions [here](https://github.com/YashJipkate/zenefits-backend/blob/master/README.md).
+- Run the backend server. Instructions [here](https://github.com/YashJipkate/zenefits-backend/blob/master/README.md).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Replace all ocurrences of https://zenefits-backend.herokuapp.com by http://localhost:3000.
+
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Running unit tests
 
