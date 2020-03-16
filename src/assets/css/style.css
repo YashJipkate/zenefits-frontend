@@ -623,12 +623,12 @@ a:focus {
 
 .footer_section {
   font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 25px 20px;
 }
 
 .footer_section p {
-  color: #292929;
+  color: #fff;
   margin: 0;
   text-align: center;
 }

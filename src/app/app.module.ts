@@ -10,13 +10,15 @@ import { OrgChartComponent } from './org-chart/org-chart.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SliderComponent,
-    OrgChartComponent
+    OrgChartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
