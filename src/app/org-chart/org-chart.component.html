@@ -1,5 +1,8 @@
 <div class="mainContainer">
   <div class="h2">The People</div>
-  <small class="text-muted">We consider our employees as our family, and this is our family tree.</small>
-  <div class="container" id="chart_div"></div>
+  <small class="text-muted">Employees are family, and this organisation hierarchy is family tree.</small>
+  <div class="chartContainer">
+    <div *ngIf="!isChartLoaded" class="spinnerContainer"><mat-spinner></mat-spinner></div>
+    <div *ngIf="isChartLoaded" class="container" id="chartDiv"></div>
+  </div>
 </div>

@@ -11,8 +11,9 @@ let that: any;
 })
 export class OrgChartComponent implements OnInit {
 
-  employeesData: any[] = [];
+  employeesData: any[];
   employeeQueryUrl: string;
+  isChartLoaded: boolean;
 
   // Chart data
   chartData = [];
@@ -21,6 +22,8 @@ export class OrgChartComponent implements OnInit {
   constructor(
     private dataService: DataService, private gInstanceService: GoogleInstanceService) {
     this.employeeQueryUrl = 'https://zenefits-backend.herokuapp.com/people';
+    this.isChartLoaded = false;
+    this.employeesData = [];
   }
 
   ngOnInit() {
@@ -28,14 +31,17 @@ export class OrgChartComponent implements OnInit {
     this.gLib = this.gInstanceService.getGoogle();
     this.getCompleteListOfEmployees(this.employeeQueryUrl);
   }
-
+  
   getCompleteListOfEmployees(url: string) {
     this.dataService.getData(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
       if (data.data.next_url) {
         this.getCompleteListOfEmployees(
           data.data.next_url.replace('https://api.zenefits.com/core', 'https://zenefits-backend.herokuapp.com'));
-      } else { this.buildDataForChart(this.employeesData.flat()); }
+      } else {
+        this.isChartLoaded = true;
+        this.buildDataForChart(this.employeesData.flat());
+      }
     }, (error) => { console.log(error); });
   }
 
@@ -57,7 +63,8 @@ export class OrgChartComponent implements OnInit {
     that.chartConfig.addColumn('string', 'Manager');
     that.chartConfig.addColumn('string', 'ToolTip');
     that.chartConfig.addRows(that.chartData);
-    const chart = new that.gLib.visualization.OrgChart(document.getElementById('chart_div'));
+    console.log(document.getElementById('chart_div'));
+    const chart = new that.gLib.visualization.OrgChart(document.getElementById('chartDiv'));
     chart.draw(that.chartConfig, {allowHtml: true, size: 'large', allowCollapse: true, nodeClass: 'nodeStyle'});
   }
 }

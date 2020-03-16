@@ -1,16 +1,22 @@
 .mainContainer {
     margin-top: 5%;
     text-align: center;
+    max-width: 100vw;
 }
 
-#chart_div {
+#chartDiv {
     margin-top: 5%;
     margin-bottom: 5%;
-    max-width: 100vw;
     overflow-x: scroll;
 }
 
 .nodeStyle {
     background-color: blanchedalmond;
     border-color: red;
+}
+
+.spinnerContainer {
+    width: 100%;
+    margin-left: 40%;
+    padding: 5%;
 }
