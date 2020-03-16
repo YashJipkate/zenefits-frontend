@@ -71,8 +71,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "zenefits-employee-portal:build",
-            "proxyConfig": "proxy-dev.conf.json"
+            "browserTarget": "zenefits-employee-portal:build"
           },
           "configurations": {
             "production": {
