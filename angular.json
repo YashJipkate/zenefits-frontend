@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/zenefits-employee-portal",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -23,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/assets/css/bootstrap.css",
               "src/assets/css/responsive.css",
@@ -57,6 +59,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -88,6 +94,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -140,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "zenefits-employee-portal"
+  "defaultProject": "zenefits-employee-portal",
+  "cli": {
+    "analytics": "a6741b95-4d79-4f89-b7e6-ce6f688d427a"
+  }
 }
