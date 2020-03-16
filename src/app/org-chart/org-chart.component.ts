@@ -50,7 +50,8 @@ export class OrgChartComponent implements OnInit {
       this.chartData.push([{
         v: element.id,
         f: element.preferred_name +
-           '<div style="color: #888">' + (element.work_email ? element.work_email + ' ' : '') + '</div>'},
+           '<div style="color: #888"><i>' + (element.title ? element.title + ' ' : 'Employee ') + '</i><br><small>' +
+           (element.work_email ? element.work_email + ' ' : '') + '</small></div>'},
         (element.manager.url ? element.manager.url.split('/').pop() : ''), '']);
     });
     this.gLib.charts.load('current', {packages: ['orgchart']});
