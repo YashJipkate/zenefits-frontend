@@ -63,7 +63,6 @@ export class OrgChartComponent implements OnInit {
     that.chartConfig.addColumn('string', 'Manager');
     that.chartConfig.addColumn('string', 'ToolTip');
     that.chartConfig.addRows(that.chartData);
-    console.log(document.getElementById('chart_div'));
     const chart = new that.gLib.visualization.OrgChart(document.getElementById('chartDiv'));
     chart.draw(that.chartConfig, {allowHtml: true, size: 'large', allowCollapse: true, nodeClass: 'nodeStyle'});
   }
