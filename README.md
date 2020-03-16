@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/98f9f68b-8109-4fec-8284-a9d2862bdf7f/deploy-status)](https://app.netlify.com/sites/zenefits-employee-portal/deploys) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/24d168fc46b5459f82c908e94c2082f7)](https://www.codacy.com/manual/YashJipkate/zenefits-frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YashJipkate/zenefits-frontend&amp;utm_campaign=Badge_Grade) [![YashJipkate](https://circleci.com/gh/YashJipkate/zenefits-frontend.svg?style=svg)](https://circleci.com/gh/YashJipkate/zenefits-frontend)
 
-Submission for the Zenefits internship assignment. Zenefits online portal is an Angular web app with backend in Express.js ([Github repo](https://github.com/YashJipkate/zenefits-backend)). Some salient features of this app are:
+Submission for the Zenefits internship assignment. Zenefits online portal is an Angular web app with backend in Express.js. This repo houses the frontend side, for the backend code please visit ([zenefits-backend](https://github.com/YashJipkate/zenefits-backend)). Some salient features of this app are:
 
 - Uses customized [Google Charts API](https://developers.google.com/chart/interactive/docs/gallery/orgchart)'s    Oranization chart to build the org chart.
 - Shows all the companies associated with the Auth token in an attractive carousel.
