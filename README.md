@@ -1,5 +1,7 @@
 # Zenefits Online Portal
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d24c4f0596ae4baca8af01c3688d72f2)](https://app.codacy.com/manual/YashJipkate/zenefits-frontend?utm_source=github.com&utm_medium=referral&utm_content=YashJipkate/zenefits-frontend&utm_campaign=Badge_Grade_Dashboard)
+
 Submission for the Zenefits internship assignment. Zenefits online portal is an Angular web app with backend in Express.js ([Github repo](https://github.com/YashJipkate/zenefits-backend)). Some salient features of this app are:
 
  - Uses customized [Google Charts API](https://developers.google.com/chart/interactive/docs/gallery/orgchart)'s Oranization chart to build the org chart.
