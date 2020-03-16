@@ -31,7 +31,7 @@ export class OrgChartComponent implements OnInit {
     this.gLib = this.gInstanceService.getGoogle();
     this.getCompleteListOfEmployees(this.employeeQueryUrl);
   }
-  
+
   getCompleteListOfEmployees(url: string) {
     this.dataService.getData(url).subscribe((data: any) => {
       this.employeesData.push(data.data.data);
